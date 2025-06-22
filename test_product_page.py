@@ -9,7 +9,6 @@ def test_guest_can_add_product_to_basket(browser):
     page = ProductPage(browser, link)
     page.open()
     page.add_product()
-    page.solve_quiz_and_get_code()
     page.allert_name_message_correct()
     page.allert_price_message_correct()
 
