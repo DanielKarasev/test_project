@@ -51,7 +51,7 @@ def test_guest_cant_see_product_in_basket_opened_from_product_page(browser):
     page = ProductPage(browser, link)
     page.open()
     page.go_to_basket()
-    basked_page = BasketPage(browser, browser.current_url)
+    basket_page = BasketPage(browser, browser.current_url)
     basket_page.basket_hollow()
 
 
@@ -64,12 +64,12 @@ class TestUserAddToBasketFromProductPage():
         loginpage.open()
         email, password = str(time.time()) + '@fakemail.com', str(time.time())
         loginpage.register_new_user(email, password)
+        loginpage.should_be_authorized_user()
     @pytest.mark.need_review
     def test_user_can_add_product_to_basket(self, browser):
         link = "http://selenium1py.pythonanywhere.com/en-gb/catalogue/the-city-and-the-stars_95/"
         page = ProductPage(browser, link)
         page.open()
-        page.should_be_authorized_user()
         page.add_product()
         page.allert_name_message_correct()
         page.allert_price_message_correct()
