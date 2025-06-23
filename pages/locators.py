@@ -7,7 +7,7 @@ class BasePageLocators():
 
 class BasketPageLocators():
     BASKET_ITEMS = (By.CSS_SELECTOR, ".basket-items")
-    HOLLOW_BASKET_MASSAGE = (By.CSS_SELECTOR, "#content_innet p")
+    HOLLOW_BASKET_MASSAGE = (By.CSS_SELECTOR, "#content_inner p")
 
 class LoginPageLocators():
     REGISTER_FORM = (By.CSS_SELECTOR, "#register_form")
